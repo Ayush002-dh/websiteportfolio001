@@ -6,7 +6,240 @@
   <title>DevOps Portfolio | Aayush</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0f172a;
+      color: #f1f5f9;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background: #1e293b;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #38bdf8;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #f1f5f9;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #38bdf8;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background: #1e293b;
+      list-style: none;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .dropdown-menu li {
+      margin: 5px 0;
+    }
+
+    .dropdown-menu li a {
+      color: #f1f5f9;
+    }
+
+    .dropdown-menu li a:hover {
+      color: #38bdf8;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 80px 10%;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      flex-wrap: wrap;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      color: #38bdf8;
+    }
+
+    .hero-text h2 {
+      font-size: 2rem;
+      color: #facc15;
+      margin-bottom: 15px;
+    }
+
+    .hero-text p {
+      margin: 20px 0;
+      max-width: 500px;
+      color: #e2e8f0;
+    }
+
+    .btns {
+      margin-top: 20px;
+    }
+
+    .btn-primary {
+      background: #38bdf8;
+      color: #0f172a;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-right: 10px;
+      transition: background 0.3s;
+    }
+
+    .btn-primary:hover {
+      background: #0ea5e9;
+    }
+
+    .btn-outline {
+      border: 2px solid #38bdf8;
+      color: #38bdf8;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .btn-outline:hover {
+      background: #38bdf8;
+      color: #0f172a;
+    }
+
+    .profile-photo {
+      max-width: 250px;
+      border-radius: 50%;
+      border: 4px solid #38bdf8;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+      margin-top: 20px;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 60px 10%;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #38bdf8;
+      border-bottom: 2px solid #38bdf8;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    /* Skills */
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .skill {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .skill i {
+      font-size: 2rem;
+      color: #facc15;
+      margin-bottom: 10px;
+    }
+
+    .skill span {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .skill:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Projects */
+    #projects div {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    #projects h3 {
+      color: #facc15;
+    }
+
+    /* Contact */
+    .contact-boxes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .contact-box {
+      background: #1e293b;
+      padding: 15px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #f1f5f9;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: background 0.3s;
+    }
+
+    .contact-box:hover {
+      background: #334155;
+      color: #38bdf8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1e293b;
+      color: #94a3b8;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
   <nav>
@@ -22,7 +255,7 @@
           <li><a href="#project1">Jenkins CI/CD Demo</a></li>
           <li><a href="#project2">Docker Web Deployment</a></li>
           <li><a href="#project3">Linux Automation Scripts</a></li>
-          <li><a href="#project3">Deploy static website on aws</a></li>
+          <li><a href="#project4">Deploy static website on AWS</a></li>
         </ul>
       </li>
       <li><a href="#contact">Contact</a></li>
@@ -60,13 +293,13 @@
   <section id="skills">
     <h2>Skills</h2>
     <div class="skills-container">
-      <div class="skill"><i class="fab fa-linux"></i><span>Linux</span></div>
-      <div class="skill"><i class="fab fa-aws"></i><span>AWS</span></div>
-      <div class="skill"><i class="fab fa-docker"></i><span>Docker</span></div>
-      <div class="skill"><i class="fab fa-github"></i><span>Git & GitHub</span></div>
-      <div class="skill"><i class="fas fa-terminal"></i><span>Bash</span></div>
-      <div class="skill"><i class="fas fa-code"></i><span>Terraform</span></div>
-      <div class="skill"><i class="fas fa-tools"></i><span>Jenkins</span></div>
+      <div class="skill"><i class="fab fa-linux"></i><span>Linux</span><small>System administration & shell commands</small></div>
+      <div class="skill"><i class="fab fa-aws"></i><span>AWS</span><small>Cloud hosting & deployment</small></div>
+      <div class="skill"><i class="fab fa-docker"></i><span>Docker</span><small>Containerization & Compose</small></div>
+      <div class="skill"><i class="fab fa-github"></i><span>Git & GitHub</span><small>Version control & collaboration</small></div>
+      <div class="skill"><i class="fas fa-terminal"></i><span>Bash</span><small>Automation scripting</small></div>
+      <div class="skill"><i class="fas fa-code"></i><span>Terraform</span><small>IAC (Infrastructure as Code)</small></div>
+      <div class="skill"><i class="fas fa-tools"></i><span>Jenkins</span><small>CI/CD pipelines</small></div>
     </div>
   </section>
 
@@ -80,15 +313,19 @@
     <h2>Projects</h2>
     <div id="project1">
       <h3>Jenkins CI/CD Demo</h3>
-      <p>Automated deployment using Jenkins pipeline and GitHub integration.</p>
+      <p>Automated deployment pipeline using <strong>Jenkins, GitHub & Docker</strong>.</p>
     </div>
     <div id="project2">
       <h3>Docker Web Deployment</h3>
-      <p>Containerized a web app with Docker Compose and Nginx reverse proxy.</p>
+      <p>Containerized and deployed a web app using <strong>Docker, Docker Compose, and Nginx</strong>.</p>
     </div>
     <div id="project3">
       <h3>Linux Automation Scripts</h3>
-      <p>Wrote bash scripts to automate server backup, updates, and log rotation.</p>
+      <p>Automated server tasks using <strong>Bash Scripting & Cron Jobs</strong>.</p>
+    </div>
+    <div id="project4">
+      <h3>Deploy Static Website on AWS</h3>
+      <p>Deployed static site using <strong>AWS S3 + CloudFront</strong> for scalability and performance.</p>
     </div>
   </section>
 
